@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!--link rel="shortcut icon" href="../../assets/ico/favicon.ico"-->
+
+    <title>ERICA the Rhino - Live Status</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="status.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">ERICA the Rhino - Live Status</a>
+        </div>
+	  </div>
+    </div>
+
+    <div class="container">
+
+      <div class="row">
+		  <div class="col-md-8">
+    		<h1><span class="glyphicon glyphicon-cloud"></span> Brain Dump</h1>
+			<p class="lead">This is a log of what I am thinking.</p>
+			<div id="brain-dump">
+			</div>
+		</div>
+	  <div class="col-md-4">
+    		<h1><span class="glyphicon glyphicon-stats"></span> Current Stats</h1>
+			<div id="state-energy">
+			<h4>Energy - <span class="state-text"></span></h4>
+			<div class="progress" >
+			  <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+			    <span class="sr-only">60% Complete</span>
+			  </div>
+			</div>
+			</div>
+			<div id="state-mood">
+			<h4>Mood - <span class="state-text"></span></h4>
+			<div class="progress ">
+			  <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+			    <span class="sr-only">60% Complete</span>
+			  </div>
+			</div>
+			</div>
+			<div id="state-interest">
+			<h4>Interest - <span class="state-text"></span></h4>
+			<div class="progress">
+			  <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+			    <span class="sr-only">60% Complete</span>
+			  </div>
+			</div>
+			</div>
+			<div id="state-fullness">
+			<h4>Fullness - <span class="state-text"></span></h4>
+			<div class="progress">
+			  <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+			    <span class="sr-only">60% Complete</span>
+			  </div>
+			</div>
+		</div>
+		<hr/>
+		<h3>Debug</h3>
+				<div id="debug"></div>
+	</div>
+      </div>
+
+    </div><!-- /.container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="mosquitto.js"></script>
+    <script src="status.js"></script>
+  
+
+</body></html>

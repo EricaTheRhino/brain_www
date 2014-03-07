@@ -1,0 +1,142 @@
+body{
+	width: 1024px;
+	height: 552px;
+	overflow:hidden;
+}
+
+.container {
+	padding: 0px;
+	width: 1024px;
+	height: 552px;	
+	border: 1px solid black;
+	position: absolute;
+	top:0px;
+	left:0px;
+
+	display: none;
+}
+
+#home{
+	display: block;
+}
+
+#about_info{
+	position:absolute;
+	top: 30px;
+	right: 50px;
+	width: 340px;
+	border: 2px solid #ccc;
+	background: rgba(255,255,255,0.9);
+	border-radius: 10px;
+	padding: 5px;
+	font-size: 150%;
+}
+
+h2,h3{
+	margin:0px 0px 10px 0px;
+	padding:0px;
+}
+
+.rhino_sm{
+	position:absolute;
+	top: 30px;
+	right: 30px;
+}
+
+.rhino_logo{
+	position:absolute;
+	top: 10px;
+	left: 10px;
+}
+
+.home_icon{
+	position:absolute;
+	top: 10px;
+	right: 10px;
+	cursor: pointer;
+	opacity: 0.7;
+}
+.cog{
+	position:absolute;
+	bottom: 10px;
+	right: 10px;
+	cursor: pointer;
+	opacity: 0.5;
+}
+
+
+.page_up{
+	position:absolute;
+	top: 60px;
+	right: 10px;
+	cursor: pointer;
+	opacity: 0.7;
+}
+.page_down{
+	position:absolute;
+	bottom: 20px;
+	right: 10px;
+	cursor: pointer;
+	opacity: 0.7;
+}
+
+#btns{
+	position:absolute;
+	left: 30px;
+	top: 150px;
+}
+#btns a{
+	display:block;
+	margin-bottom: 10px;
+}
+.btn {
+	zoom:1.8;
+	border: 2px solid #ccc;
+	background-image: linear-gradient(to bottom, #ffffff, #e6e6e6);
+	width: 300px;
+}
+
+#facts{
+	font-size: 170%;
+	padding: 25px 30px;
+}
+
+#facts .text{
+	overflow: auto;
+	border: 1px solid black;
+	height: 462px;
+	padding: 10px;
+	width: 945px;
+}
+
+#facts .text img.right{
+	float:right;
+	padding-left: 5px;
+	width: 200px;
+}
+
+#facts .text img.left{
+	float:left;
+	padding-right: 5px;
+	width: 200px
+}
+
+.contact_link img {
+	vertical-align: top;
+	margin-right: 10px;
+}
+
+.contact_link{
+	height:32px;
+	line-height: 32px;
+	font-size: 32px;
+	margin-bottom: 20px
+}
+
+.qr{
+	width: 250px;
+	position:absolute;
+	bottom: 20px;
+	right: 20px;
+	cursor: pointer;
+}
