@@ -39,10 +39,10 @@
         <div class="col-md-4">
             <h1><span class="glyphicon glyphicon-cog"></span>&nbsp;Controls</h1>
             <div id="control-panel">
-            <button class="btn btn-success btn-lg btn-block">Move My Eyes</button>
-            <button class="btn btn-success btn-lg btn-block">Hear Me Roar</button>
-            <button class="btn btn-success btn-lg btn-block">Wiggle My Ears</button>
-            <button class="btn btn-success btn-lg btn-block">Feed Me</button>
+            <button class="btn btn-success btn-lg btn-block eventer" data-event="brain.test.eyes">Move My Eyes</button>
+            <button class="btn btn-success btn-lg btn-block eventer" data-event="brain.test.sound">Hear Me Roar</button>
+            <button class="btn btn-success btn-lg btn-block eventer" data-event="brain.test.ears">Wiggle My Ears</button>
+            <button class="btn btn-success btn-lg btn-block eventer" data-event="interaction.chip">Feed Me</button>
         </div>
         </div>
 		  <div class="col-md-4">
@@ -99,8 +99,16 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="jquery.min.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
-    <script src="mosquitto.js"></script>
-    <script src="status.js"></script>
+    <!--<script src="mosquitto.js"></script>
+    <script src="status.js"></script>-->
 
+<script language="javascript">
+jQuery(function($) {
+    $(".eventer").click(function() {
+        var ev = $(this).data("event");
+        $.post('/events/', JSON.stringify({'event':ev, 'params':{}}));
+    });
+});
+</script>
 
 </body></html>
