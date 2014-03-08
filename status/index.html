@@ -11,6 +11,7 @@
 
     <!-- Bootstrap core CSS -->
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bootstrap/css/font-awesome.css" rel="stylesheet" />
 
     <!-- Custom styles for this template -->
     <link href="status.css" rel="stylesheet">
@@ -35,14 +36,23 @@
     <div class="container">
 
       <div class="row">
-		  <div class="col-md-8">
-    		<h1><span class="glyphicon glyphicon-cloud"></span> Brain Dump</h1>
+        <div class="col-md-4">
+            <h1><span class="glyphicon glyphicon-cog"></span>&nbsp;Controls</h1>
+            <div id="control-panel">
+            <button class="btn btn-success btn-lg btn-block">Move My Eyes</button>
+            <button class="btn btn-success btn-lg btn-block">Hear Me Roar</button>
+            <button class="btn btn-success btn-lg btn-block">Wiggle My Ears</button>
+            <button class="btn btn-success btn-lg btn-block">Feed Me</button>
+        </div>
+        </div>
+		  <div class="col-md-4">
+    		<h1><span class="glyphicon glyphicon-cloud"></span>&nbsp;Brain Dump</h1>
 			<p class="lead">This is a log of what I am thinking.</p>
 			<div id="brain-dump">
 			</div>
 		</div>
 	  <div class="col-md-4">
-    		<h1><span class="glyphicon glyphicon-stats"></span> Current Stats</h1>
+    		<h1><span class="glyphicon glyphicon-stats"></span>&nbsp;Current Stats</h1>
 			<div id="state-energy">
 			<h4>Energy - <span class="state-text"></span></h4>
 			<div class="progress" >
@@ -87,10 +97,10 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="jquery.min.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <script src="mosquitto.js"></script>
     <script src="status.js"></script>
-  
+
 
 </body></html>
