@@ -8,7 +8,7 @@
      <title>ERICA Side Screens</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="style.css?v3" rel="stylesheet">
@@ -19,28 +19,28 @@
 	  <div class="container" id="home">
  		 <img src ="imgs/rhino_sm.png" alt="Erica" class="rhino_sm"/>
  		 <a href="/sidescreens/"><img src ="imgs/erica.png" alt="Erica" class="rhino_logo"/></a>
-		
-		 
+
+
 		 <div id="btns">
 			 <a href="#" class="btn btn-large" onclick="change_page('about')">About Erica</a>
 			 <a href="#" class="btn btn-large" onclick="change_page('facts')">Facts about Rhinos</a>
 			 <a href="#" class="btn btn-large" onclick="change_page('contact')">Erica on the Web</a>
 
 		 </div>
-	  	
 
- 		 <img src ="imgs/cog.png" alt="Erica" class="cog" onclick="change_page('admin')">
+
+ 		 <!-- <img src ="imgs/cog.png" alt="Erica" class="cog" onclick="change_page('admin')"> -->
 	  </div>
-	
+
 
      <div class="container" id="about">
-		 
+
 		 <img src ="imgs/about.png" width ="100%" height ="100%" alt="About Erica" usemap="#about" />
 
  		 <img src ="imgs/erica.png" alt="Erica" class="rhino_logo"  onclick="about_text('');change_page('home');"/>
-		 
+
 		 <map name="about">
-		 
+
 		 <area shape ="circle" coords ="413,70,61" onclick="about_text('ears'); return false;" href ="#" target ="_blank" alt="Ears" />
 		 <area shape ="circle" coords ="525,223,84" onclick="about_text('brain'); return false;" href ="#" target ="_blank" alt="Brian" />
 		 <area shape ="circle" coords ="156,351,67" onclick="about_text('horn'); return false;" href ="#" target ="_blank" alt="Horn" />
@@ -48,28 +48,30 @@
 		 <area shape ="circle" coords ="453,387,40" onclick="about_text('cheek'); return false;" href ="#" target ="_blank" alt="Cheek" />
 		 <area shape ="circle" coords ="222,489,45" onclick="about_text('mouth'); return false;" href ="#" target ="_blank" alt="Mouth" />
 
-		 </map> 
-		 
+		 </map>
+
 		 <div id="about_info">
 		 	<h3>About Me</h3>
 			<p>
 				Click on the circles to find out more about me.
 			</p>
 		 </div>
-		 
 
- 		 <img src ="imgs/home.png" alt="Home" class="home_icon" onclick="about_text('');change_page('home')"/>
-		 
+
+<!--  		 <img src ="imgs/home.png" alt="Home" class="home_icon" onclick="about_text('');change_page('home')"/> -->
+
      </div>
-	 
+
 	 <div class="container" id="facts">
+
+         <img src="imgs/erica.png" alt="Erica" class="rhino_logo"  onclick="about_text('');change_page('home');"/>
 		 <h2>Facts about Rhinoceroses</h2>
 		 <div class="text">
-		 <img src ="imgs/rhinos/white-rhino.jpg" alt="White Rhinos" class="right">
+		 <img src="imgs/rhinos/white-rhino.jpg" alt="White Rhinos" class="right">
 		 <p>Erica is a White Rhinoceros. Rhinos are hunted in the wild by poachers. As a result, the Northern White Rhino is critically endangered, with less than 10 left in the world!</p>
 		 <p>Rhinos are vegetarians. They normally eat up to 50kg of food per day! The black rhino browses on leafy plants, whereas the white rhino lives on grass.</p>
 		 <p>Many rhinos die each year due to illegal poaching. Rhino horn can fetch up to $50,000 on the black market, making it a very lucrative industry. Last year nearly 700 rhinos were killed due to poaching.</p>
-		 <img src ="imgs/rhinos/blackorwhite.jpg" alt="White or Blaccl" class="left">
+		 <img src="imgs/rhinos/blackorwhite.jpg" alt="White or Blaccl" class="left">
 		 <p>The main difference between black and white rhinos is the shape of their mouths - white rhinos have broad flat lips for grazing, whereas black rhinos have long pointed lips for eating foliage.</p>
 		 <p>In the wild, adult rhinoceros have no real natural predators other than humans. Although rhinos are large and have a reputation for being tough, they are very easily poached.</p>
 		 <p>Rhinos are now only found in a few small pockets across Africa, but historically they were spread over a large area. In southern Africa we can see a large area where it is believed both black and white rhinos were in abundance.</p>
@@ -77,15 +79,15 @@
 
  		 <img src ="imgs/up.png" alt="Home" class="page_up" onclick="scroll('facts .text', 'up')"/>
  		 <img src ="imgs/down.png" alt="Home" class="page_down" onclick="scroll('facts .text', 'down')"/>
- 		 <img src ="imgs/home.png" alt="Home" class="home_icon" onclick="change_page('home')"/>
-		
+<!--  		 <img src ="imgs/home.png" alt="Home" class="home_icon" onclick="change_page('home')"/> -->
+
 	 </div>
-	 
+
 	 <div class="container" id="contact">
 
  		 <img src ="imgs/rhino_sm.png" alt="Erica" class="rhino_sm"/>
 
- 		 <img src ="imgs/home.png" alt="Home" class="home_icon" onclick="change_page('home')"/>
+ 		 <!-- <img src ="imgs/home.png" alt="Home" class="home_icon" onclick="change_page('home')"/> -->
 	  <img src ="imgs/erica.png" alt="Erica" class="rhino_logo"  onclick="about_text('');change_page('home');"/>
 		 <div id="btns">
 		 <h2> Erica on the Web</h2>
@@ -97,24 +99,24 @@
 		  	  <div class="contact_link"><img src="imgs/rdf.png"/>http://data.ericatherhino.org</div>
 		 </div>
    	  <img src ="imgs/qr.png" class="qr" />
-	
+
 	</div>
-	 
+
 	 <div class="container" id="admin">
 		 <div id="btns">
 			  <a href="http://awareness-screen.ecs.soton.ac.uk/apps/screenres/" class="btn btn-large" onclick="getScreenRes(); return false;" id="screenres">Screen Res</a>
-			  
+
 		 </div>
 
-  		 <img src ="imgs/home.png" alt="Home" class="home_icon" onclick="change_page('home')"/>
+<!--   		 <img src ="imgs/home.png" alt="Home" class="home_icon" onclick="change_page('home')"/> -->
 	</div>
-	 
+
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="/lib/jquery.min.js"></script>
-    <script src="/lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../lib/jquery.min.js"></script>
+    <script src="../lib/bootstrap/js/bootstrap.min.js"></script>
     <script src="side.js?v3"></script>
-  
+
 
 </body></html>

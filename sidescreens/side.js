@@ -1,7 +1,7 @@
 $(function(){
-	
-	
-	
+
+
+
 });
 
 function change_page(dest){
@@ -9,36 +9,36 @@ function change_page(dest){
 	$(".container").fadeOut();
 	$("#"+dest).fadeIn();
 	return false;
-	
+
 }
 
 function about_text(key){
-	
+
 	var title, text;
 	switch(key){
 		case "eyes":
 			title = 'Eyes';
-			text = 'I use my eyes to see the world, I can regonise peoples faces or special QR Codes';
+			text = 'I use my eyes to see the world. I can recognise people\'s faces and special QR Codes.';
 			break;
 		case "ears":
 			title = 'Ears';
-			text = 'My ears let me hear things arround me and let you know when I when am interesting in something';
+			text = 'My ears let me hear things around me. I\'ll let you know when I am interested in something.';
 			break;
 		case "horn":
 			title = 'Horn';
-			text = 'I have LEDs in my horn that show you my mood and how I am feeling';
+			text = 'I have LEDs in my horn that show you my mood and how I am feeling.';
 			break;
 		case "brain":
 			title = 'Brain';
-			text = 'Like you I have a brain, which controls everything. Mine is made from a raspberry Pi';
+			text = 'Like you I have a brain, which controls everything. Mine is made from a Raspberry Pi!';
 			break;
 		case "cheek":
 			title = 'Cheek';
-			text = 'I am quite ticklish, so if you stroke my cheek I might giggle';
+			text = 'I am quite ticklish, so if you stroke my cheek I might giggle.';
 			break;
 		case "mouth":
 			title = 'Mouth';
-			text = 'I need energy to survive, so to feed me touch my mouth';
+			text = 'I need energy to survive, so to feed me touch my mouth!';
 			break;
 		default:
 			title = 'About Me';
@@ -48,7 +48,7 @@ function about_text(key){
 	$("#about_info h3").html(title);
 	$("#about_info p").html(text);
 	$("#about_info").fadeIn();
-	
+
 }
 
 function getScreenRes(){
