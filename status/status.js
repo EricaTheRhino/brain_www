@@ -56,7 +56,7 @@
 			};
 		}
 		Page.prototype.connect = function(){
-			var url = "ws://sidious.ecs.soton.ac.uk:8888";
+			var url = "ws://brain.ericatherhino.test:8888";//sidious.ecs.soton.ac.uk:8888";
 			//mosq.connect(url);
 		};
 		Page.prototype.disconnect = function(){

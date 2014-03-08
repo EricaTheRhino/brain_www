@@ -6,8 +6,8 @@ $(function(){
 
 function change_page(dest){
 
-	$(".container").fadeOut();
-	$("#"+dest).fadeIn();
+	$(".container").hide();
+	$("#"+dest).show();
 	return false;
 
 }
