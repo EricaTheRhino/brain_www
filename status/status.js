@@ -94,6 +94,21 @@
 
 		var clearno = 10;
 
+
+		switch( obj.event )
+		{
+		case 'twitter.colour':
+			if(obj.params.colour.toLowerCase()=='christmas'){
+				$('#light_color').hide();
+				$('#light_xmas').show();
+			}else{
+				$('#light_color').css('color', obj.params.colour);
+				$('#light_xmas').hide();
+				$('#light_color').show();
+			}
+		break;
+		}
+
 		$('#brain-dump .alert').filter(function(i) {
 		    return i > clearno;
 		}).remove();
