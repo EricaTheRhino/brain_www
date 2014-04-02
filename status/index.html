@@ -47,11 +47,11 @@
             </div>
             <div class="col-md-4">
                 <h1><span class="icon-eye-open"></span>&nbsp;Left Eye</h1>
-                <img class="cam" id="left-image" src="/board/eyes/left" width="352" height="288" />
+                <img class="cam" id="left-image" src="http://left-eye.ericatherhino.test:8182/image/current" width="352" height="288" />
             </div>
             <div class="col-md-4">
                  <h1 style="text-align:right;">Right Eye&nbsp;<span class="icon-eye-open"></span></h1>
-                <img class="cam" id="right-image" src="/board/eyes/right" width="352" height="288" />
+                <img class="cam" id="right-image" src="http://right-eye.ericatherhino.test:8182/image/current" width="352" height="288" />
             </div>
         </div>
         <hr />
@@ -125,12 +125,12 @@ jQuery(function($) {
 
     var reloadLeftEye = function() {
         var d = new Date();
-        $("#left-image").attr("src", "/board/eyes/left?"+d.getTime());
+        $("#left-image").attr("src", "http://left-eye.ericatherhino.test:8182/image/current?"+d.getTime());
     };
 
     var reloadRightEye = function() {
         var d = new Date();
-        $("#right-image").attr("src", "/board/eyes/right?"+d.getTime());
+        $("#right-image").attr("src", "http://right-eye.ericatherhino.test:8182/image/current?"+d.getTime());
     };
     $("#right-image").load(function() {
         setTimeout(reloadRightEye, 5000);
