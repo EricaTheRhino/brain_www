@@ -74,7 +74,7 @@ function setLastPressTime(){
 function backToHome(){	
 	var lastpresstime = parseInt($('#lastpresstime').html());
 	var now = Math.round(new Date().getTime() / 1000);
-	if (lastpresstime + 10 < now && $('#home').css('display') == 'none') {
+	if (lastpresstime + 60 < now && $('#home').css('display') == 'none') {
 		$(".container").hide();
         	$("#home").show();
 		setLastPressTime();
