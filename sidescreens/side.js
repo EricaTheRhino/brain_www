@@ -5,7 +5,7 @@ $(function(){
 });
 
 function change_page(dest){
-
+	setLastPressTime();	
 	$(".container").hide();
 	$("#"+dest).show();
 	return false;
@@ -13,7 +13,7 @@ function change_page(dest){
 }
 
 function about_text(key){
-
+	setLastPressTime();
 	var title, text;
 	switch(key){
 		case "eyes":
@@ -58,9 +58,25 @@ function getScreenRes(){
 }
 
 function scroll(element,dir){
+	setLastPressTime();
 	var dirp= 50;
 	if(dir=='up')
 		dirp *= -1;
 	var cur = $('#'+element).scrollTop();
 	 $('#'+element).scrollTop( cur + dirp );
+}
+
+function setLastPressTime(){
+	var now = Math.round(new Date().getTime() / 1000);
+	$('#lastpresstime').html(now);
+}
+
+function backToHome(){	
+	var lastpresstime = parseInt($('#lastpresstime').html());
+	var now = Math.round(new Date().getTime() / 1000);
+	if (lastpresstime + 10 < now && $('#home').css('display') == 'none') {
+		$(".container").hide();
+        	$("#home").show();
+		setLastPressTime();
+	}
 }

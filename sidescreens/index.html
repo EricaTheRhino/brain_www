@@ -16,6 +16,7 @@
   </head>
 
   <body>
+          <div id="lastpresstime" style="display: none;">0</div>
 	  <div class="container" id="home">
  		 <img src ="imgs/rhino_sm.png" alt="Erica" class="rhino_sm"/>
  		 <a href="/sidescreens/"><img src ="imgs/erica_noback.png" alt="Erica" class="rhino_logo"/></a>
@@ -25,11 +26,14 @@
 			 <a href="#" class="btn btn-large" onclick="change_page('about')">About Erica</a>
 			 <a href="#" class="btn btn-large" onclick="change_page('facts')">Facts about Rhinos</a>
 			 <a href="#" class="btn btn-large" onclick="change_page('contact')">Erica on the Web</a>
+		         <a href="#" class="btn btn-large" onclick="change_page('interact')">Interact with Erica</a>
+                         <a href="#" class="btn btn-large" onclick="change_page('see')">See what Erica sees</a>
+                         <a href="#" class="btn btn-large" onclick="change_page('mood')">Erica's Mood</a>
+                         <a href="#" class="btn btn-large" onclick="change_page('log')">Erica's Internal Monologue</a>
 
 		 </div>
 
 
- 		 <!-- <img src ="imgs/cog.png" alt="Erica" class="cog" onclick="change_page('admin')"> -->
 	  </div>
 
 
@@ -58,13 +62,12 @@
 		 </div>
 
 
-<!--  		 <img src ="imgs/home.png" alt="Home" class="home_icon" onclick="about_text('');change_page('home')"/> -->
 
      </div>
 
 	 <div class="container" id="facts">
 
-         <img src="imgs/erica_back.png" alt="Erica" class="rhino_logo"  onclick="about_text('');change_page('home');"/>
+         <img src="imgs/erica_back.png" alt="Erica" class="rhino_logo"  onclick="change_page('home');"/>
 		 <h2>Facts about Rhinoceroses</h2>
 		 <div class="text">
 		 <img src="imgs/rhinos/white-rhino.jpg" alt="White Rhinos" class="right">
@@ -79,7 +82,6 @@
 
  		 <img src ="imgs/up.png" alt="Home" class="page_up" onclick="scroll('facts .text', 'up')"/>
  		 <img src ="imgs/down.png" alt="Home" class="page_down" onclick="scroll('facts .text', 'down')"/>
-<!--  		 <img src ="imgs/home.png" alt="Home" class="home_icon" onclick="change_page('home')"/> -->
 
 	 </div>
 
@@ -87,8 +89,7 @@
 
  		 <img src ="imgs/rhino_sm.png" alt="Erica" class="rhino_sm"/>
 
- 		 <!-- <img src ="imgs/home.png" alt="Home" class="home_icon" onclick="change_page('home')"/> -->
-	  <img src ="imgs/erica_back.png" alt="Erica" class="rhino_logo"  onclick="about_text('');change_page('home');"/>
+	  <img src ="imgs/erica_back.png" alt="Erica" class="rhino_logo"  onclick="change_page('home');"/>
 		 <div id="btns">
 		 <h2> Erica on the Web</h2>
 		  	  <div class="contact_link"><img src="imgs/website.png"/>http://www.ericatherhino.org</div>
@@ -102,6 +103,88 @@
 
 	</div>
 
+        <div class="container" id="interact">
+
+                 <img src ="imgs/rhino_sm.png" alt="Erica" class="rhino_sm"/>
+
+          <img src ="imgs/erica_back.png" alt="Erica" class="rhino_logo"  onclick="change_page('home');"/>
+                 <div id="btns">
+                 <h2> Interact with Erica</h2>
+		<button class="btn btn-lg btn-block eventer" data-event="brain.test.eyes" onclick="setLastPressTime();">Move My Eyes</button>
+		<button class="btn btn-lg btn-block eventer" data-event="brain.test.ears" onclick="setLastPressTime();">Wiggle My Ears</button>
+                <button class="btn btn-lg btn-block eventer" data-event="brain.test.hornlights" onclick="setLastPressTime();">Change My Horn Colour</button>
+                <button class="btn btn-lg btn-block eventer" data-event="brain.test.bodylights" onclick="setLastPressTime();">Animate My Lights</button>
+                 </div>
+
+        </div>
+
+        <div class="container" id="see">
+
+                 <img src ="imgs/rhino_sm.png" alt="Erica" class="rhino_sm"/>
+
+          <img src ="imgs/erica_back.png" alt="Erica" class="rhino_logo"  onclick="change_page('home');"/>
+                 <div id="btns">
+                 <h2> See what Erica Sees</h2>
+                 <img width="352" height="288" src="/board/eyes/left" id="left-image" class="cam">
+                 <img id="right-image" class="cam" width="352" height="288" src="/board/eyes/right">
+                 </div>
+
+        </div>
+
+        <div class="container" id="mood">
+
+                 <img src ="imgs/rhino_sm.png" alt="Erica" class="rhino_sm"/>
+                 <img src ="imgs/erica_back.png" alt="Erica" class="rhino_logo"  onclick="about_text('');change_page('home');"/>
+                 <div id="btns">
+                 <h2> Erica's Mood</h2>
+<div id="state-energy" style="width: 930px; margin-top: 30px;">
+    			<h4>Energy - <span class="state-text"></span></h4>
+    			<div class="progress" style="height: 33px;">
+    			  <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+    			    <span class="sr-only">60% Complete</span>
+    			  </div>
+    			</div>
+    			</div>
+    			<div id="state-mood">
+    			<h4>Mood - <span class="state-text"></span></h4>
+    			<div class="progress" style="height: 33px;">
+    			  <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+    			    <span class="sr-only">60% Complete</span>
+    			  </div>
+    			</div>
+    			</div>
+    			<div id="state-interest">
+    			<h4>Interest - <span class="state-text"></span></h4>
+    			<div class="progress" style="height: 33px;">
+    			  <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+    			    <span class="sr-only">60% Complete</span>
+    			  </div>
+    			</div>
+    			</div>
+    			<div id="state-fullness">
+    			<h4>Fullness - <span class="state-text"></span></h4>
+    			<div class="progress" style="height: 33px;">
+    			  <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+    			    <span class="sr-only">60% Complete</span>
+    			  </div>
+    			</div>
+		 </div>
+            </div>
+
+        </div>
+
+        <div class="container" id="log">
+
+                 <img src ="imgs/rhino_sm.png" alt="Erica" class="rhino_sm"/>
+                 <img src ="imgs/erica_back.png" alt="Erica" class="rhino_logo"  onclick="change_page('home');"/>
+                 <div id="btns">
+                 <h2> Erica's Internal Monologue</h2>
+		 </div>
+
+
+        </div>
+
+  
 	 <div class="container" id="admin">
 		 <div id="btns">
 			  <a href="http://awareness-screen.ecs.soton.ac.uk/apps/screenres/" class="btn btn-large" onclick="getScreenRes(); return false;" id="screenres">Screen Res</a>
@@ -116,7 +199,35 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="../lib/jquery.min.js"></script>
     <script src="../lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../lib/mosquitto.js"></script>
+    <script src="../lib/status.js"></script> 
     <script src="side.js?v3"></script>
 
+<script language="javascript">
+jQuery(function($) {
+    $(".eventer").click(function() {
+        var ev = $(this).data("event");
+        $.post('/events/', JSON.stringify({'event':ev, 'params':{}}));
+    });
+
+    var reloadLeftEye = function() {
+        var d = new Date();
+        $("#left-image").attr("src", "/board/eyes/left?"+d.getTime());
+    };
+
+    var reloadRightEye = function() {
+        var d = new Date();
+        $("#right-image").attr("src", "/board/eyes/right?"+d.getTime());
+    };
+    $("#right-image").load(function() {
+        setTimeout(reloadRightEye, 5000);
+    });
+    $("#left-image").load(function() {
+        setTimeout(reloadLeftEye, 5000);
+    });
+    setLastPressTime(); 
+    setInterval(backToHome, 5000);
+});
+</script>
 
 </body></html>
