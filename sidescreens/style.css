@@ -85,15 +85,31 @@ h2,h3{
 	left: 30px;
 	top: 150px;
 }
-#btns a{
+#btns1{
+        position:absolute;
+        left: 30px;
+        top: 250px;
+}
+
+#btns2{
+        position:absolute;
+        left: 240px;
+        top: 250px;
+}
+
+#btns a, #btns1 a, #btns2 a{
 	display:block;
 	margin-bottom: 10px;
+}
+
+.button {
+    color: #0033FF;
 }
 .btn {
 	zoom:1.8;
 	border: 2px solid #ccc;
 	background-image: linear-gradient(to bottom, #ffffff, #e6e6e6);
-	width: 300px;
+	width: 200px;
 }
 
 #facts{
