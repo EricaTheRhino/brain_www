@@ -51,6 +51,15 @@ function about_text(key){
 
 }
 
+function loading(element, timeout){
+	var text = element.innerHTML;
+	var regexp=/<img/;
+	if (!regexp.test(text)){
+		element.innerHTML = '<img src="imgs/loading.gif" height="16px;" alt="Loading..."/>';
+		setTimeout(function(){ element.innerHTML = text; }, timeout);
+	}
+}
+
 function change_cousin(direction){
 	setLastPressTime();
 	var cousin_name = $('#cousinname').html();
