@@ -51,6 +51,33 @@ function about_text(key){
 
 }
 
+function change_cousin(direction){
+	setLastPressTime();
+	var cousin_name = $('#cousinname').html();
+	var regexp = new RegExp(' ', 'g');
+	var cousin = cousin_name.replace(regexp, "_");
+	var cousins = ["Augustus","Beatrix","Beauty_and_the_Beast","Bunty","Cosmos_Rhino","Dock_Rhino","Enrhinomental","Fleur","Flossy","Glint","Kyma","Mechanico","Mrs_Hearty","Newton","NOT_a_Target","Planet_Rhino","Rafiki","Reggie","Reginald","Reveal","RhinOSeros","Rika","Ringo","Rita","Rohan","Rosie","Seymour","Stylo_Rhino","Sunny","The_Rhino_of_Life","Wheres_Ralph","Will","Wonderland"];
+	var cousin_pos = cousins.indexOf(cousin);
+	if (cousin_pos == 0 && direction == "previous") {
+		cousin_pos = cousins.length - 1;
+	}
+	else if (cousin_pos == cousins.length - 1 && direction == "next") {
+		cousin_pos = 0;
+	}
+	else if (direction == "previous") {
+		cousin_pos--;
+	}
+	else {
+		cousin_pos++;
+	}
+	cousin = cousins[cousin_pos];
+	var regexp = new RegExp('_', 'g');
+	cousin_name = cousin.replace(regexp, " ");
+	$('#cousinpic').attr("src", "imgs/cousins/"+cousin+".jpg");
+	$('#cousinpic').attr("alt", cousin_name);
+	$('#cousinname').html(cousin_name);
+}
+
 function getScreenRes(){
 	var resolution = $( window ).width() + " x " + $( window ).height();
 	$('#screenres').html('Screen Res: '+resolution);

@@ -23,15 +23,16 @@
 
 
 		 <div id="btns1">
-			 <a href="#" class="btn btn-large" onclick="change_page('about')">About Erica</a>
+			 <a href="#" class="btn btn-large" onclick="change_page('about')">Find out about Me</a>
+			 <a href="#" class="btn btn-large" onclick="change_page('cousins')">My Cousins</a>
 			 <a href="#" class="btn btn-large" onclick="change_page('facts')">Facts about Rhinos</a>
-			 <a href="#" class="btn btn-large" onclick="change_page('contact')">Erica on the Web</a>
-		         <a href="#" class="btn btn-large" onclick="change_page('interact')">Interact with Erica</a>
+			 <a href="#" class="btn btn-large" onclick="change_page('contact')">Find Me on the Web</a>
 		 </div>
                  <div id="btns2">
-                  	<a href="#" class="btn btn-large" onclick="change_page('see')">See what Erica sees</a>
-                         <a href="#" class="btn btn-large" onclick="change_page('mood')">Erica's Mood</a>
-                         <a href="#" class="btn btn-large" onclick="change_page('log')">Erica's Internal Monologue</a>
+                        <a href="#" class="btn btn-large" onclick="change_page('interact')">Interact with Me</a>
+                  	<a href="#" class="btn btn-large" onclick="change_page('see')">See What I See</a>
+                         <a href="#" class="btn btn-large" onclick="change_page('mood')">My Mood</a>
+                         <a href="#" class="btn btn-large" onclick="change_page('log')">My Internal Monologue</a>
 
 		 </div>
 
@@ -67,6 +68,20 @@
 
      </div>
 
+      <div class="container" id="cousins">
+
+         <img src="imgs/erica_back.png" alt="Erica" class="rhino_logo"  onclick="change_page('home');"/>
+         <h2 id="title-top-right">My Cousins</h2>
+         <div id="btns" style="text-align: center; width: 100%;"> 
+             <img src="imgs/previous.png" alt="Previous" onclick="change_cousin('previous');"/>&nbsp;
+             <img id="cousinpic" height="350px" src="imgs/cousins/Augustus.jpg" alt="Augustus"/>&nbsp;
+             <img src="imgs/next.png" alt="Next" onclick="change_cousin('next');"/>
+             <br/>
+             <h3 id="cousinname">Augustus</h3>
+        </div>
+      </div>
+
+
 	 <div class="container" id="facts">
 
          <img src="imgs/erica_back.png" alt="Erica" class="rhino_logo"  onclick="change_page('home');"/>
@@ -93,7 +108,7 @@
 
 	  <img src ="imgs/erica_back.png" alt="Erica" class="rhino_logo"  onclick="change_page('home');"/>
 		 <div id="btns">
-		 <h2> Erica on the Web</h2>
+		 <h2> Find Me on the Web</h2>
 		  	  <div class="contact_link"><img src="imgs/website.png"/>http://www.ericatherhino.org</div>
 		  	  <div class="contact_link"><img src="imgs/twitter.png"/>@ericatherhino</div>
 		  	  <div class="contact_link"><img src="imgs/facebook.png"/>/EricaTheRhino</div>
@@ -111,11 +126,11 @@
 
           <img src ="imgs/erica_back.png" alt="Erica" class="rhino_logo"  onclick="change_page('home');"/>
                  <div id="btns">
-                 <h2> Interact with Erica</h2>
-		<button class="btn btn-lg btn-block eventer" data-event="brain.test.eyes" style="font-size: 1.2em; color: #00FFFF;" onclick="setLastPressTime();">Move My Eyes</button>
-		<button class="btn btn-lg btn-block eventer" data-event="brain.test.ears" onclick="setLastPressTime();">Wiggle My Ears</button>
-                <button class="btn btn-lg btn-block eventer" data-event="brain.test.hornlights" onclick="setLastPressTime();">Change My Horn Colour</button>
-                <button class="btn btn-lg btn-block eventer" data-event="brain.test.bodylights" onclick="setLastPressTime();">Animate My Lights</button>
+                 <h2> Interact with Me</h2>
+		<button class="btn btn-large eventer" data-event="brain.test.eyes" onclick="setLastPressTime();">Move My Eyes</button>
+		<button class="btn btn-large eventer" data-event="brain.test.ears" onclick="setLastPressTime();">Wiggle My Ears</button>
+                <button class="btn btn-large eventer" data-event="brain.test.hornlights" onclick="setLastPressTime();">Change My Horn Colour</button>
+                <button class="btn btn-large eventer" data-event="brain.test.bodylights" onclick="setLastPressTime();">Animate My Lights</button>
                  </div>
 
         </div>
@@ -126,7 +141,7 @@
 
           <img src ="imgs/erica_back.png" alt="Erica" class="rhino_logo"  onclick="change_page('home');"/>
                  <div id="btns">
-                 <h2> See what Erica Sees</h2>
+                 <h2> See What I See</h2>
                  <img width="352" height="288" src="/board/eyes/left" id="left-image" class="cam">
                  <img id="right-image" class="cam" width="352" height="288" src="/board/eyes/right">
                  </div>
@@ -136,9 +151,9 @@
         <div class="container" id="mood">
 
                  <img src ="imgs/rhino_sm.png" alt="Erica" class="rhino_sm"/>
-                 <img src ="imgs/erica_back.png" alt="Erica" class="rhino_logo"  onclick="about_text('');change_page('home');"/>
+                 <img src ="imgs/erica_back.png" alt="Erica" class="rhino_logo"  onclick="change_page('home');"/>
                  <div id="btns">
-                 <h2> Erica's Mood</h2>
+                 <h2> My Mood</h2>
 <div id="state-energy" style="width: 930px; margin-top: 30px;">
     			<h4>Energy - <span class="state-text"></span></h4>
     			<div class="progress" style="height: 33px;">
@@ -180,7 +195,9 @@
                  <img src ="imgs/rhino_sm.png" alt="Erica" class="rhino_sm"/>
                  <img src ="imgs/erica_back.png" alt="Erica" class="rhino_logo"  onclick="change_page('home');"/>
                  <div id="btns">
-                 <h2> Erica's Internal Monologue</h2>
+                 <h2> My Internal Monologue</h2>
+                 <div id="brain-dump">
+                 </div>
 		 </div>
 
 
@@ -219,7 +236,7 @@ jQuery(function($) {
 
     var reloadRightEye = function() {
         var d = new Date();
-        $("#right-image").attr("src", "http://right.ye.ericatherhino.test:8182/image/current?"+d.getTime());
+        $("#right-image").attr("src", "http://right-eye.ericatherhino.test:8182/image/current?"+d.getTime());
     };
     $("#right-image").load(function() {
         setTimeout(reloadRightEye, 5000);
