@@ -11,7 +11,7 @@
     <link href="../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="style.css?v3" rel="stylesheet">
+    <link href="style.css?v4" rel="stylesheet">
 
   </head>
 
@@ -44,7 +44,8 @@
 
 		 <img src ="imgs/about.png" width ="100%" height ="100%" alt="About Erica" usemap="#about" />
 
- 		 <img src ="imgs/erica_back.png" alt="Erica" class="rhino_logo"  onclick="about_text('');change_page('home');"/>
+  		 <img src="imgs/back.gif" alt="Erica" class="back_logo"  onclick="about_text('');change_page('home');"/>
+        	 <img src="imgs/erica_noback.png" alt="Erica" class="rhino_logo_moved"  onclick="about_text('');change_page('home');"/>
 
 		 <map name="about">
 
@@ -70,12 +71,13 @@
 
       <div class="container" id="cousins">
 
-         <img src="imgs/erica_back.png" alt="Erica" class="rhino_logo"  onclick="change_page('home');"/>
+         <img src="imgs/back.gif" alt="Erica" class="back_logo"  onclick="change_page('home');"/>
+         <img src="imgs/erica_noback.png" alt="Erica" class="rhino_logo_moved"  onclick="change_page('home');"/>
          <h2 id="title-top-right">My Cousins</h2>
          <div id="btns" style="text-align: center; width: 100%;"> 
-             <img src="imgs/previous.png" alt="Previous" onclick="change_cousin('previous');"/>&nbsp;
-             <img id="cousinpic" height="350px" src="imgs/cousins/Augustus.jpg" alt="Augustus"/>&nbsp;
-             <img src="imgs/next.png" alt="Next" onclick="change_cousin('next');"/>
+             <img src="imgs/previous.png" width="92px" height="194px" alt="Previous" onclick="change_cousin('previous');"/>&nbsp;&nbsp;&nbsp;
+             <img id="cousinpic" height="350px" src="imgs/cousins/Augustus.jpg" alt="Augustus"/>&nbsp;&nbsp;&nbsp;&nbsp;
+             <img src="imgs/next.png" width="92px" height="194px" alt="Next" onclick="change_cousin('next');"/>
              <br/>
              <h3 id="cousinname">Augustus</h3>
         </div>
@@ -83,8 +85,8 @@
 
 
 	 <div class="container" id="facts">
-
-         <img src="imgs/erica_back.png" alt="Erica" class="rhino_logo"  onclick="change_page('home');"/>
+                 <img src="imgs/back.gif" alt="Erica" class="back_logo"  onclick="change_page('home');"/>
+                 <img src="imgs/erica_noback.png" alt="Erica" class="rhino_logo_moved"  onclick="change_page('home');"/>
 		 <h2>Facts about Rhinoceroses</h2>
 		 <div class="text">
 		 <img src="imgs/rhinos/white-rhino.jpg" alt="White Rhinos" class="right">
@@ -105,8 +107,8 @@
 	 <div class="container" id="contact">
 
  		 <img src ="imgs/rhino_sm.png" alt="Erica" class="rhino_sm"/>
-
-	  <img src ="imgs/erica_back.png" alt="Erica" class="rhino_logo"  onclick="change_page('home');"/>
+		 <img src="imgs/back.gif" alt="Erica" class="back_logo"  onclick="change_page('home');"/>
+                 <img src="imgs/erica_noback.png" alt="Erica" class="rhino_logo_moved"  onclick="change_page('home');"/>
 		 <div id="btns">
 		 <h2> Find Me on the Web</h2>
 		  	  <div class="contact_link"><img src="imgs/website.png"/>http://www.ericatherhino.org</div>
@@ -138,8 +140,8 @@
         <div class="container" id="see">
 
                  <img src ="imgs/rhino_sm.png" alt="Erica" class="rhino_sm"/>
-
-          <img src ="imgs/erica_back.png" alt="Erica" class="rhino_logo"  onclick="change_page('home');"/>
+ 		 <img src="imgs/back.gif" alt="Erica" class="back_logo"  onclick="change_page('home');"/>
+                 <img src="imgs/erica_noback.png" alt="Erica" class="rhino_logo_moved"  onclick="change_page('home');"/>
                  <div id="btns">
                  <h2> See What I See</h2>
                  <img width="352" height="288" src="/board/eyes/left" id="left-image" class="cam">
@@ -151,7 +153,8 @@
         <div class="container" id="mood">
 
                  <img src ="imgs/rhino_sm.png" alt="Erica" class="rhino_sm"/>
-                 <img src ="imgs/erica_back.png" alt="Erica" class="rhino_logo"  onclick="change_page('home');"/>
+		 <img src="imgs/back.gif" alt="Erica" class="back_logo"  onclick="change_page('home');"/>
+                 <img src="imgs/erica_noback.png" alt="Erica" class="rhino_logo_moved"  onclick="change_page('home');"/>
                  <div id="btns">
                  <h2> My Mood</h2>
 <div id="state-energy" style="width: 930px; margin-top: 30px;">
@@ -193,7 +196,8 @@
         <div class="container" id="log">
 
                  <img src ="imgs/rhino_sm.png" alt="Erica" class="rhino_sm"/>
-                 <img src ="imgs/erica_back.png" alt="Erica" class="rhino_logo"  onclick="change_page('home');"/>
+		 <img src="imgs/back.gif" alt="Erica" class="back_logo"  onclick="change_page('home');"/>
+                 <img src="imgs/erica_noback.png" alt="Erica" class="rhino_logo_moved"  onclick="change_page('home');"/>
                  <div id="btns">
                  <h2> My Internal Monologue</h2>
                  <p class="lead">This is what I am thinking...</p>
@@ -221,7 +225,7 @@
     <script src="../lib/bootstrap/js/bootstrap.min.js"></script>
     <script src="../lib/mosquitto.js"></script>
     <script src="../lib/status.js"></script> 
-    <script src="side.js?v3"></script>
+    <script src="side.js?v4"></script>
 
 <script language="javascript">
 jQuery(function($) {
