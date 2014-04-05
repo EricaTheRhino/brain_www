@@ -52,6 +52,7 @@ function about_text(key){
 }
 
 function loading(element, timeout){
+	setLastPressTime();
 	var text = element.innerHTML;
 	var regexp=/<img/;
 	if (!regexp.test(text)){

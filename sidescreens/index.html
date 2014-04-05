@@ -9,9 +9,10 @@
 
     <!-- Bootstrap core CSS -->
     <link href="../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bootstrap/css/font-awesome.css" rel="stylesheet" />
 
     <!-- Custom styles for this template -->
-    <link href="style.css?v4" rel="stylesheet">
+    <link href="style.css?v5" rel="stylesheet">
 
   </head>
 
@@ -74,7 +75,7 @@
          <img src="imgs/back.gif" alt="Erica" class="back_logo"  onclick="change_page('home');"/>
          <img src="imgs/erica_noback.png" alt="Erica" class="rhino_logo_moved"  onclick="change_page('home');"/>
          <h2 id="title-top-right">My Cousins</h2>
-         <div id="btns" style="text-align: center; width: 100%;"> 
+         <div id="btns" style="text-align: center; width: 964px;"> 
              <img src="imgs/previous.png" width="92px" height="194px" alt="Previous" onclick="change_cousin('previous');"/>&nbsp;&nbsp;&nbsp;
              <img id="cousinpic" height="350px" src="imgs/cousins/Augustus.jpg" alt="Augustus"/>&nbsp;&nbsp;&nbsp;&nbsp;
              <img src="imgs/next.png" width="92px" height="194px" alt="Next" onclick="change_cousin('next');"/>
@@ -88,12 +89,12 @@
                  <img src="imgs/back.gif" alt="Erica" class="back_logo"  onclick="change_page('home');"/>
                  <img src="imgs/erica_noback.png" alt="Erica" class="rhino_logo_moved"  onclick="change_page('home');"/>
 		 <h2>Facts about Rhinoceroses</h2>
-		 <div class="text">
+		 <div class="text" style="overflow-y: hidden;">
 		 <img src="imgs/rhinos/white-rhino.jpg" alt="White Rhinos" class="right">
 		 <p>Erica is a White Rhinoceros. Rhinos are hunted in the wild by poachers. As a result, the Northern White Rhino is critically endangered, with less than 10 left in the world!</p>
 		 <p>Rhinos are vegetarians. They normally eat up to 50kg of food per day! The black rhino browses on leafy plants, whereas the white rhino lives on grass.</p>
 		 <p>Many rhinos die each year due to illegal poaching. Rhino horn can fetch up to $50,000 on the black market, making it a very lucrative industry. Last year nearly 700 rhinos were killed due to poaching.</p>
-		 <img src="imgs/rhinos/blackorwhite.jpg" alt="White or Blaccl" class="left">
+		 <img src="imgs/rhinos/blackorwhite.jpg" alt="White or Black" class="left">
 		 <p>The main difference between black and white rhinos is the shape of their mouths - white rhinos have broad flat lips for grazing, whereas black rhinos have long pointed lips for eating foliage.</p>
 		 <p>In the wild, adult rhinoceros have no real natural predators other than humans. Although rhinos are large and have a reputation for being tough, they are very easily poached.</p>
 		 <p>Rhinos are now only found in a few small pockets across Africa, but historically they were spread over a large area. In southern Africa we can see a large area where it is believed both black and white rhinos were in abundance.</p>
@@ -125,8 +126,8 @@
         <div class="container" id="interact">
 
                  <img src ="imgs/rhino_sm.png" alt="Erica" class="rhino_sm"/>
-
-          <img src ="imgs/erica_back.png" alt="Erica" class="rhino_logo"  onclick="change_page('home');"/>
+		<img src="imgs/back.gif" alt="Erica" class="back_logo"  onclick="change_page('home');"/>
+                 <img src="imgs/erica_noback.png" alt="Erica" class="rhino_logo_moved"  onclick="change_page('home');"/>
                  <div id="btns">
                  <h2> Interact with Me</h2>
 		<button class="btn btn-large eventer" data-event="brain.test.eyes" onclick="loading(this,5000);">Move My Eyes</button>
@@ -144,8 +145,8 @@
                  <img src="imgs/erica_noback.png" alt="Erica" class="rhino_logo_moved"  onclick="change_page('home');"/>
                  <div id="btns">
                  <h2> See What I See</h2>
-                 <img width="352" height="288" src="/board/eyes/left" id="left-image" class="cam">
-                 <img id="right-image" class="cam" width="352" height="288" src="/board/eyes/right">
+                 <img id="left-image" class="cam" width="352" height="288" src="http://10.0.0.4:8182/image/current"/>
+                 <img id="right-image" class="cam" width="352" height="288" src="http://10.0.0.5:8182/image/current"/>
                  </div>
 
         </div>
@@ -201,7 +202,7 @@
                  <div id="btns">
                  <h2> My Internal Monologue</h2>
                  <p class="lead">This is what I am thinking...</p>
-                 <div id="brain-dump">
+                 <div id="brain-dump" style="height: 280px; overflow-y: hidden;">
                  </div>
 		 </div>
 
@@ -223,9 +224,9 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="../lib/jquery.min.js"></script>
     <script src="../lib/bootstrap/js/bootstrap.min.js"></script>
-    <script src="../lib/mosquitto.js"></script>
-    <script src="../lib/status.js"></script> 
-    <script src="side.js?v4"></script>
+    <script src="../status/mosquitto.js"></script>
+    <script src="../status/status.js"></script> 
+    <script src="side.js?v5"></script>
 
 <script language="javascript">
 jQuery(function($) {
@@ -236,18 +237,18 @@ jQuery(function($) {
 
     var reloadLeftEye = function() {
         var d = new Date();
-        $("#left-image").attr("src", "http://left-eye.ericatherhino.test:8182/image/current?"+d.getTime());
+        $("#left-image").attr("src", "http://10.0.0.4:8182/image/current?"+d.getTime());
     };
 
     var reloadRightEye = function() {
         var d = new Date();
-        $("#right-image").attr("src", "http://right-eye.ericatherhino.test:8182/image/current?"+d.getTime());
+        $("#right-image").attr("src", "http://10.0.0.5:8182/image/current?"+d.getTime());
     };
     $("#right-image").load(function() {
-        setTimeout(reloadRightEye, 5000);
+        setTimeout(reloadRightEye, 2000);
     });
     $("#left-image").load(function() {
-        setTimeout(reloadLeftEye, 5000);
+        setTimeout(reloadLeftEye, 2000);
     });
     setLastPressTime(); 
     setInterval(backToHome, 5000);
