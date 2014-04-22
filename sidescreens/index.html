@@ -9,14 +9,15 @@
 
     <!-- Bootstrap core CSS -->
     <link href="../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="bootstrap/css/font-awesome.css" rel="stylesheet" />
+    <link href="../status/bootstrap/css/font-awesome.css" rel="stylesheet" />
 
     <!-- Custom styles for this template -->
-    <link href="style.css?v5" rel="stylesheet">
+    <link href="style.css?v9" rel="stylesheet">
 
   </head>
 
   <body>
+          <div id="debug_box" style="display: none; position: absolute; top: 5px; left: 619px; z-index: 100; width: 400px; height: 250px; background-color: yellow; overfull-x: scroll; overflow-y: scroll;">debug box</div>
           <div id="lastpresstime" style="display: none;">0</div>
 	  <div class="container" id="home">
  		 <img src ="imgs/rhino_sm.png" alt="Erica" class="rhino_sm"/>
@@ -132,8 +133,8 @@
                  <h2> Interact with Me</h2>
 		<button class="btn btn-large eventer" data-event="brain.test.eyes" onclick="loading(this,5000);">Move My Eyes</button>
 		<button class="btn btn-large eventer" data-event="brain.test.ears" onclick="loading(this, 5000);">Wiggle My Ears</button>
-                <button class="btn btn-large eventer" data-event="brain.test.hornlights" onclick="loading(this, 5000);">Change My Horn Colour</button>
-                <button class="btn btn-large eventer" data-event="brain.test.bodylights" onclick="loading(this, 5000);">Animate My Lights</button>
+<!--                <button class="btn btn-large eventer" data-event="brain.test.hornlights" onclick="loading(this, 5000);">Change My Horn Colour</button>
+                <button class="btn btn-large eventer" data-event="brain.test.bodylights" onclick="loading(this, 5000);">Animate My Lights</button> -->
                  </div>
 
         </div>
@@ -226,10 +227,10 @@
     <script src="../lib/bootstrap/js/bootstrap.min.js"></script>
     <script src="../status/mosquitto.js"></script>
     <script src="../status/status.js"></script> 
-    <script src="side.js?v5"></script>
+    <script src="side.js?v13"></script>
 
 <script language="javascript">
-jQuery(function($) {
+(function($) {
     $(".eventer").click(function() {
         var ev = $(this).data("event");
         $.post('/events/', JSON.stringify({'event':ev, 'params':{}}));
@@ -239,20 +240,21 @@ jQuery(function($) {
         var d = new Date();
         $("#left-image").attr("src", "http://10.0.0.4:8182/image/current?"+d.getTime());
     };
-
     var reloadRightEye = function() {
         var d = new Date();
         $("#right-image").attr("src", "http://10.0.0.5:8182/image/current?"+d.getTime());
     };
-    $("#right-image").load(function() {
-        setTimeout(reloadRightEye, 2000);
-    });
+    
     $("#left-image").load(function() {
         setTimeout(reloadLeftEye, 2000);
     });
+    $("#right-image").load(function() {
+        setTimeout(reloadRightEye, 2000);
+    });
+
     setLastPressTime(); 
     setInterval(backToHome, 5000);
-});
+})(jQuery);
 </script>
 
 </body></html>

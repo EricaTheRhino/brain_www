@@ -1,9 +1,3 @@
-$(function(){
-
-
-
-});
-
 function change_page(dest){
 	setLastPressTime();	
 	$(".container").hide();
@@ -61,6 +55,9 @@ function loading(element, timeout){
 	}
 }
 
+function message(message){
+	$('#debug_box').html($('#debug_box').html()+"<br/>"+message);
+}
 function change_cousin(direction){
 	setLastPressTime();
 	var cousin_name = $('#cousinname').html();
@@ -108,7 +105,7 @@ function setLastPressTime(){
 	$('#lastpresstime').html(now);
 }
 
-function backToHome(){	
+function backToHome(){
 	var lastpresstime = parseInt($('#lastpresstime').html());
 	var now = Math.round(new Date().getTime() / 1000);
 	if (lastpresstime + 60 < now && $('#home').css('display') == 'none') {

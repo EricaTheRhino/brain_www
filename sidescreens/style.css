@@ -125,6 +125,7 @@ h2,h3{
 .button {
     	color: #0033FF;
 }
+
 .btn {
 	zoom:1.8;
 	border: 2px solid #ccc;
@@ -133,6 +134,10 @@ h2,h3{
 	display: block;
 	color: #428bca;
 	margin-bottom: 10px;
+}
+button {
+	background: #ffffff;
+	background-color: #ffffff;
 }
 
 #facts{
