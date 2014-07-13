@@ -131,10 +131,10 @@
                  <img src="imgs/erica_noback.png" alt="Erica" class="rhino_logo_moved"  onclick="change_page('home');"/>
                  <div id="btns">
                  <h2> Interact with Me</h2>
-		<button class="btn btn-large eventer" data-event="brain.test.eyes" onclick="loading(this,5000);">Move My Eyes</button>
-		<button class="btn btn-large eventer" data-event="brain.test.ears" onclick="loading(this, 5000);">Wiggle My Ears</button>
-<!--                <button class="btn btn-large eventer" data-event="brain.test.hornlights" onclick="loading(this, 5000);">Change My Horn Colour</button>
-                <button class="btn btn-large eventer" data-event="brain.test.bodylights" onclick="loading(this, 5000);">Animate My Lights</button> -->
+		<button class="btn btn-large eventer" data-event="interaction.touchscreen.eyes" onclick="loading(this,5000);">Move My Eyes</button>
+		<button class="btn btn-large eventer" data-event="interaction.touchscreen.ears" onclick="loading(this, 5000);">Wiggle My Ears</button>
+                <button class="btn btn-large eventer" data-event="interaction.touchscreen.hornlights" onclick="loading(this, 5000);">Change My Horn Colour</button>
+                <button class="btn btn-large eventer" data-event="interaction.touchscreen.bodylights" onclick="loading(this, 5000);">Animate My Lights</button>
                  </div>
 
         </div>
@@ -158,41 +158,40 @@
 		 <img src="imgs/back.gif" alt="Erica" class="back_logo"  onclick="change_page('home');"/>
                  <img src="imgs/erica_noback.png" alt="Erica" class="rhino_logo_moved"  onclick="change_page('home');"/>
                  <div id="btns">
-                 <h2> My Mood</h2>
-<div id="state-energy" style="width: 930px; margin-top: 30px;">
-    			<h4>Energy - <span class="state-text"></span></h4>
-    			<div class="progress" style="height: 33px;">
-    			  <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
-    			    <span class="sr-only">60% Complete</span>
-    			  </div>
-    			</div>
-    			</div>
-    			<div id="state-mood">
-    			<h4>Mood - <span class="state-text"></span></h4>
-    			<div class="progress" style="height: 33px;">
-    			  <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
-    			    <span class="sr-only">60% Complete</span>
-    			  </div>
-    			</div>
-    			</div>
-    			<div id="state-interest">
-    			<h4>Interest - <span class="state-text"></span></h4>
-    			<div class="progress" style="height: 33px;">
-    			  <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
-    			    <span class="sr-only">60% Complete</span>
-    			  </div>
-    			</div>
-    			</div>
-    			<div id="state-fullness">
-    			<h4>Fullness - <span class="state-text"></span></h4>
-    			<div class="progress" style="height: 33px;">
-    			  <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
-    			    <span class="sr-only">60% Complete</span>
-    			  </div>
-    			</div>
-		 </div>
-            </div>
-
+                   <h2> My Mood</h2>
+                   <div id="state-energy" style="width: 930px; margin-top: 30px;">
+                     <h4>Energy - <span class="state-text"></span></h4>
+                     <div class="progress" style="height: 33px;">
+                       <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+                         <span class="sr-only">60% Complete</span>
+                       </div>
+                     </div>
+                   </div>
+                   <div id="state-mood">
+                     <h4>Mood - <span class="state-text"></span></h4>
+                     <div class="progress" style="height: 33px;">
+                       <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+                         <span class="sr-only">60% Complete</span>
+                       </div>
+                     </div>
+                   </div>
+                   <div id="state-interest">
+                     <h4>Interest - <span class="state-text"></span></h4>
+                     <div class="progress" style="height: 33px;">
+                       <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+                         <span class="sr-only">60% Complete</span>
+                       </div>
+                     </div>
+                   </div>
+                   <div id="state-fullness">
+                     <h4>Fullness - <span class="state-text"></span></h4>
+                     <div class="progress" style="height: 33px;">
+                       <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+                         <span class="sr-only">60% Complete</span>
+                       </div> 
+                     </div>
+                  </div>
+               </div>
         </div>
 
         <div class="container" id="log">
@@ -203,6 +202,7 @@
                  <div id="btns">
                  <h2> My Internal Monologue</h2>
                  <p class="lead">This is what I am thinking...</p>
+                 <div id="brain-dump-hash" style="display: none;"></div>
                  <div id="brain-dump" style="height: 280px; overflow-y: hidden;">
                  </div>
 		 </div>
@@ -225,11 +225,12 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="../lib/jquery.min.js"></script>
     <script src="../lib/bootstrap/js/bootstrap.min.js"></script>
-    <script src="../status/mosquitto.js"></script>
-    <script src="../status/status.js"></script> 
-    <script src="side.js?v13"></script>
+    <script src="../status/mosquitto.js?v9"></script>
+    <script src="../status/status.js?v9"></script> 
+    <script src="side.js?v14"></script>
 
 <script language="javascript">
+$('#debug_box').html($('#debug_box').html()+"<br/>READY");
 (function($) {
     $(".eventer").click(function() {
         var ev = $(this).data("event");
@@ -252,6 +253,9 @@
         setTimeout(reloadRightEye, 2000);
     });
 
+    updateMoodBarsAjax();
+    updateMonologueAjax();    
+     
     setLastPressTime(); 
     setInterval(backToHome, 5000);
 })(jQuery);

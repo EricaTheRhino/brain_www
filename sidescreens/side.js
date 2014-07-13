@@ -113,4 +113,117 @@ function backToHome(){
         	$("#home").show();
 		setLastPressTime();
 	}
+	updateMoodBarsAjax();
+	updateMonologueAjax();
 }
+
+function updateMoodBarsAjax(){
+	$.ajax({
+		url:"/mood.json",
+		success:function(state){
+			updateMoodBars(state);
+		},
+  		error: function (xhr, ajaxOptions, thrownError) {
+      		}
+	});
+}
+function updateMonologueAjax(){
+	$.ajax({
+                url:"/latest_events.json",
+                success:function(events){
+                        updateMonologue(events);
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                }
+        });	
+}
+
+function updateMoodBars(moods){
+	index_map = { e: 'energy', m: 'mood', i: 'interest', f: 'fullness' };
+        $.each(moods, function(index, value) {
+		mindex = index_map[index];
+                var width = $('#state-'+mindex+' .progress-bar').attr('aria-valuenow');
+                if(width!=value.percent){
+                        $('#state-'+mindex+' .progress-bar').animate({width:value.percent+'%'});
+                        $('#state-'+mindex+' .progress-bar').attr('aria-valuenow',value.percent);
+                }
+                $('#state-'+mindex+' .state-text').html(value.text);
+	});
+}
+
+
+function updateMonologue(events){
+	event_map = { 
+		'interaction.touchscreen.eyes': 'Look into my eyes!',
+		'interaction.touchscreen.ears': 'Watch my ears waggle!',
+		'interaction.touchscreen.hornlights': 'Watch my horn change colour!',
+		'interaction.touchscreen.bodylights': 'Watch my lights flicker!',
+		'twitter.mention': 'Someone has just mentioned me on twitter!',
+		'twitter.colour': 'Someone has just suggested %colour on twitter!',
+		'brain.hour': 'Is that the time? Another hour gone!',
+		'brain.reset': 'Resetting ;)',
+		'brain.idle': 'Nothing has happened, getting a little bored.',
+		'environment.weather.pollen': 'Achoo! Whoa, that pollen count is quite high!',
+		'environment.weather.temperature': '%temperature',
+		'interaction.righteye.face': 'Hello! Just seen someone on my right!',
+		'interaction.lefteye.face': 'Hello! Just seen someone on my right!',
+		'interaction.chin.press': 'Being Fed: %fullness',
+		'interaction.pir.detect': 'Ooo what\'s that! Something moved!',
+		'interaction.chip.press': 'HeHeHe, %tickle',
+	};
+	if ($("#brain-dump-hash").text() != events.hash) {
+		var clearno = 10;
+        	var eventno = 0;
+        	$("#brain-dump").text("")
+		$("#brain-dump-hash").text(events.hash);
+		$.each(events.events, function(index, obj) {
+        		eventno++;
+			if (eventno > clearno) return;
+			var stat = obj.event.split(".");
+			var message = event_map[obj.event];
+			if (obj.event == "interaction.chin.press") {
+				$.ajax({
+                			url:"/fullness_message",
+					async: false,
+                			success:function(fullness){
+                        			message = message.replace(/%fullness/, fullness);
+                			},
+                			error: function (xhr, ajaxOptions, thrownError) {
+                			}
+        			});
+			}
+			else if (obj.event == "interaction.chip.press") {
+				$.ajax({
+                                        url:"/tickle_message",
+					async: false,
+                                        success:function(tickle){
+                                                message = message.replace(/%tickle/, tickle);
+                                        },
+                                        error: function (xhr, ajaxOptions, thrownError) {
+                                        }
+                                });
+			}
+			else if (obj.event == 'twitter.colour') {
+                                message = message.replace(/%colour/, obj.params.colour);
+			}
+			else if (obj.event == 'environment.weather.temperature') {
+				if (obj.params.temperature > 20) {
+					submessage = 'Boy, it\'s a bit hot today!';
+				}
+				else if (obj.params.temperature > 15) {
+					submessage = 'Aah, the temperature is about right!';
+				}
+				else if (obj.params.temperature > 10) {
+					submessage = 'Ooh, it\'s a bit chilly today!';
+				}	
+				else {
+					submessage = 'Brrr, I\'m frozen!';
+				}
+				message = message.replace(/%temperature/, submessage);
+			}
+			var text = '<div class="alert event-'+stat[0]+'">' + message + '</div>';
+			$("#brain-dump").append(text);
+		});	        
+	}	
+}
+
