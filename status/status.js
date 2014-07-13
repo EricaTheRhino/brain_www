@@ -1,3 +1,6 @@
+function smessage(message){
+        $('#debug_box').html($('#debug_box').html()+"<br/>"+message);
+}
 (function() {
 	window.Main = {};
 	Main.Page = (function() {
@@ -5,7 +8,6 @@
 		function Page() {
 			var _this = this;
 			mosq = new Mosquitto();
-
 			$('#connect-button').click(function() {
 				return _this.connect();
 			});
@@ -91,7 +93,6 @@
 		var stat = obj.event.split(".");
 		var text = '<div class="alert event-'+stat[0]+'">' + obj.text + '</div>';
 		$("#brain-dump").prepend(text);
-
 		var clearno = 10;
 
 
