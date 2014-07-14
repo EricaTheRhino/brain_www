@@ -177,7 +177,7 @@ function updateMonologue(events){
         	$("#brain-dump").text("")
 		$("#brain-dump-hash").text(events.hash);
 		$.each(events.events, function(index, obj) {
-        		eventno++;
+			eventno++;
 			if (eventno > clearno) return;
 			var stat = obj.event.split(".");
 			var message = event_map[obj.event];

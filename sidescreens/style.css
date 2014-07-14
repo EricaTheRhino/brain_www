@@ -122,6 +122,10 @@ h2,h3{
 	margin-top: 5px;
 }
 
+#brain-dump {
+	width: 600px;
+}
+
 .button {
     	color: #0033FF;
 }
@@ -220,6 +224,12 @@ button {
         background-color: #f2dede;
         border-color: #ebccd1;
         color: #a94442;
+}
+
+.alert.event-lights{
+        background-color: #fcf8e3;
+        border-color: #faebcc;
+        color: #8a6d3b;
 }
 
 .event-twitter{
