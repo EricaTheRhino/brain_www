@@ -1,6 +1,3 @@
-function smessage(message){
-        $('#debug_box').html($('#debug_box').html()+"<br/>"+message);
-}
 (function() {
 	window.Main = {};
 	Main.Page = (function() {
@@ -25,25 +22,14 @@ function smessage(message){
 			});
 
 			mosq.onconnect = function(rc){
-				var p = document.createElement("p");
-				p.innerHTML = "CONNACK " + rc;
-				$("#debug").append(p);
+				console.log("MQTT:CONNACK " + rc);
 			};
 			mosq.ondisconnect = function(rc){
-				var p = document.createElement("p");
-				p.innerHTML = "Lost connection";
-				$("#debug").append(p);
+				console.log("MQTT:Lost connection");
 			};
 			mosq.onmessage = function(topic, payload, qos){
-				var p = document.createElement("p");
-				p.innerHTML = "PUBLISH " + topic + " " + payload;
-				$("#debug").prepend(p);
-
-				var clearno = 10;
-
-				$('#debug p').filter(function(i) {
-				    return i > clearno;
-				}).remove();
+				
+				console.log("MQTT:PUBLISH " + topic + " " + payload);
 
 
 				switch(topic)
@@ -58,7 +44,7 @@ function smessage(message){
 			};
 		}
 		Page.prototype.connect = function(){
-			var url = "ws://10.0.0.2:8888";
+			var url = "ws://" + window.location.hostname + ":8888";
 			mosq.connect(url);
 		};
 		Page.prototype.disconnect = function(){

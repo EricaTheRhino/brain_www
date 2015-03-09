@@ -47,11 +47,11 @@
             </div>
             <div class="col-md-4">
                 <h1><span class="icon-eye-open"></span>&nbsp;Left Eye</h1>
-                <img class="cam" id="left-image" src="http://left-eye.ericatherhino.test:8182/image/current" width="352" height="288" />
+                <img class="cam" id="left-image" src="images/eye_loading.png" width="352" height="288" />
             </div>
             <div class="col-md-4">
                  <h1 style="text-align:right;">Right Eye&nbsp;<span class="icon-eye-open"></span></h1>
-                <img class="cam" id="right-image" src="http://right-eye.ericatherhino.test:8182/image/current" width="352" height="288" />
+                <img class="cam" id="right-image" src="images/eye_loading.png" width="352" height="288" />
             </div>
         </div>
         <hr />
@@ -98,15 +98,12 @@
     			<h4>Light Colour&nbsp;<span class="glyphicon glyphicon-record" id="light_color"></span><img src="xmas.gif" id="light_xmas" style="display:none;vertical-align:bottom;"></h4>
 			</div>
 			
-    		<hr/>
-			
-    		<h3>Debug</h3>
-    				<div id="debug"></div>
     	</div>
       </div>
 
     </div><!-- /.container -->
 
+ <script src="settings.js"></script>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
@@ -120,17 +117,17 @@
 jQuery(function($) {
     $(".eventer").click(function() {
         var ev = $(this).data("event");
-        $.post('/events/', JSON.stringify({'event':ev, 'params':{}}));
+        $.post(config_actions.url, JSON.stringify({'event':ev, 'params':{}}));
     });
 
     var reloadLeftEye = function() {
         var d = new Date();
-        $("#left-image").attr("src", "http://left-eye.ericatherhino.test:8182/image/current?"+d.getTime());
+        $("#left-image").attr("src", config_eyes.left+d.getTime());
     };
 
     var reloadRightEye = function() {
         var d = new Date();
-        $("#right-image").attr("src", "http://right-eye.ericatherhino.test:8182/image/current?"+d.getTime());
+        $("#right-image").attr("src", config_eyes.right+d.getTime());
     };
     $("#right-image").load(function() {
         setTimeout(reloadRightEye, 5000);
