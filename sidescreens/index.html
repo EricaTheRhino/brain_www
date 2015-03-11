@@ -21,7 +21,7 @@
           <div id="lastpresstime" style="display: none;">0</div>
 	  <div class="container" id="home">
  		 <img src ="imgs/rhino_sm.png" alt="Erica" class="rhino_sm"/>
- 		 <a href="/sidescreens/"><img src ="imgs/erica_noback.png" alt="Erica" class="rhino_logo"/></a>
+ 		 <a href=""><img src ="imgs/erica_noback.png" alt="Erica" class="rhino_logo"/></a>
 
 
 		 <div id="btns1">
@@ -146,8 +146,8 @@
                  <img src="imgs/erica_noback.png" alt="Erica" class="rhino_logo_moved"  onclick="change_page('home');"/>
                  <div id="btns">
                  <h2> See What I See</h2>
-                 <img id="left-image" class="cam" width="352" height="288" src="http://10.0.0.4:8182/image/current"/>
-                 <img id="right-image" class="cam" width="352" height="288" src="http://10.0.0.5:8182/image/current"/>
+                 <img id="left-image" class="cam" width="352" height="288" src="../status/images/eye_loading.png"/>
+                 <img id="right-image" class="cam" width="352" height="288" src="../status/images/eye_loading.png"/>
                  </div>
 
         </div>
@@ -220,13 +220,15 @@
 <!--   		 <img src ="imgs/home.png" alt="Home" class="home_icon" onclick="change_page('home')"/> -->
 	</div>
 
+
+    <script src="../status/settings.js?v10"></script>
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="../lib/jquery.min.js"></script>
     <script src="../lib/bootstrap/js/bootstrap.min.js"></script>
-    <script src="../status/mosquitto.js?v9"></script>
-    <script src="../status/status.js?v9"></script> 
+    <script src="../lib/mosquitto.js?v10"></script>
+    <script src="../status/status.js?v10"></script> 
     <script src="side.js?v14"></script>
 
 <script language="javascript">
@@ -234,16 +236,18 @@ $('#debug_box').html($('#debug_box').html()+"<br/>READY");
 (function($) {
     $(".eventer").click(function() {
         var ev = $(this).data("event");
-        $.post('/events/', JSON.stringify({'event':ev, 'params':{}}));
+        $.post(config_actions.url, JSON.stringify({'event':ev, 'params':{}}));
     });
 
+   
     var reloadLeftEye = function() {
         var d = new Date();
-        $("#left-image").attr("src", "http://10.0.0.4:8182/image/current?"+d.getTime());
+        $("#left-image").attr("src", config_eyes.left+d.getTime());
     };
+
     var reloadRightEye = function() {
         var d = new Date();
-        $("#right-image").attr("src", "http://10.0.0.5:8182/image/current?"+d.getTime());
+        $("#right-image").attr("src", config_eyes.right+d.getTime());
     };
     
     $("#left-image").load(function() {

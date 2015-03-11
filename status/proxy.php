@@ -27,6 +27,21 @@ if(isset($_REQUEST['eye']) && isset($config['eye'][$_REQUEST['eye']])){
 
 	
 }
+if(isset($_REQUEST['fetch']) && isset($config['fetch'][$_REQUEST['fetch']])) {
+	$fetch = $config['fetch'][$_REQUEST['fetch']];
+
+	if(!file_exists($fetch['cache']) || (time() - filemtime($fetch['cache']))>$config['fetch']['cache']){
+		
+		if(!file_exists($fetch['cache']))
+			@mkdir(dirname($fetch['cache']),0777,true);
+		
+		$fe = @copy($fetch['url'],$fetch['cache']);
+	}
+	header('Content-Type: application/json');
+	
+		readfile($fetch['cache']);
+		exit();
+}
 
 if(isset($_REQUEST['task']) && $_REQUEST['task'] == $_REQUEST['task']){
 	

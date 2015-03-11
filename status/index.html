@@ -135,6 +135,9 @@ jQuery(function($) {
     $("#left-image").load(function() {
         setTimeout(reloadLeftEye, 1000);
     });
+	 var d = new Date();
+	 $("#left-image").attr("src", config_eyes.left+d.getTime());
+	 $("#right-image").attr("src", config_eyes.right+d.getTime());
 });
 </script>
 

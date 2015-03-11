@@ -119,7 +119,7 @@ function backToHome(){
 
 function updateMoodBarsAjax(){
 	$.ajax({
-		url:"/mood.json",
+		url:config_fetch.mood,
 		success:function(state){
 			updateMoodBars(state);
 		},
@@ -129,7 +129,7 @@ function updateMoodBarsAjax(){
 }
 function updateMonologueAjax(){
 	$.ajax({
-                url:"/latest_events.json",
+                url:config_fetch.latest_events,
                 success:function(events){
                         updateMonologue(events);
                 },
