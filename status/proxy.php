@@ -3,7 +3,7 @@
 include('settings.php');
 
 #Proxy has short fuse;
-ini_set('default_socket_timeout', 3);
+ini_set('default_socket_timeout', 1);
 
 if(isset($_REQUEST['eye']) && isset($config['eye'][$_REQUEST['eye']])){
 	$eye = $config['eye'][$_REQUEST['eye']];
