@@ -17,3 +17,5 @@ for($i = 0; $i <12; $i++){
 		sleep(5);
 	$mqtt->publish("erica/heartbeat",date("r"));
 }
+
+$mqtt->close();
