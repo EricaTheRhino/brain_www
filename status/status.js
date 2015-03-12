@@ -40,6 +40,9 @@
 				case 'erica/event':
 					erica_update_event(payload);
 				break;
+				case 'erica/heartbeat':
+					erica_heartbeat(payload);
+				break;
 				}
 			};
 		}
@@ -74,6 +77,15 @@
 
 	});
 
+	function erica_heartbeat(state){
+	   $(".heart").css("opacity", "1");
+	   window.setTimeout(function(){
+	       $(".heart").css("opacity", "0.1");
+	   }, 500);
+	}
+	
+	
+
 	function erica_update_event(state){
 		var obj = JSON.parse(state);
 		var stat = obj.event.split(".");
@@ -102,6 +114,8 @@
 
 
 	}
+	
+	
 
 	function erica_update_state(state){
 		var obj = JSON.parse(state);

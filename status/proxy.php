@@ -46,17 +46,16 @@ if(isset($_REQUEST['fetch']) && isset($config['fetch'][$_REQUEST['fetch']])) {
 if(isset($_REQUEST['task']) && $_REQUEST['task'] == $_REQUEST['task']){
 	
 	$entityBody = file_get_contents('php://input');
-	$url = 'URL';
-	$data = array('field1' => 'value', 'field2' => 'value');
 	$options = array(
 	        'http' => array(
 	        'method'  => 'POST',
-	        'content' => http_build_query($entityBody),
+	        'content' => $entityBody,
+			'protocol_version' => 1.1
 	    )
 	);
 		$context  = stream_context_create($options);
 	$result = file_get_contents($config['brain']['events']['url'], false, $context);
-	echo "OK;";
+	header('Content-Type: application/json');
 	echo $result;
 
 	
