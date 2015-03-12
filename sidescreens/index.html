@@ -257,6 +257,11 @@ $('#debug_box').html($('#debug_box').html()+"<br/>READY");
         setTimeout(reloadRightEye, 2000);
     });
 
+
+ var d = new Date();
+ $("#left-image").attr("src", config_eyes.left+d.getTime());
+ $("#right-image").attr("src", config_eyes.right+d.getTime());
+
     updateMoodBarsAjax();
     updateMonologueAjax();    
      
