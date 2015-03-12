@@ -12,8 +12,8 @@ if (!$mqtt->connect()) {
 }
 
 
-for($i = 0; $i <6; $i++){
+for($i = 0; $i <12; $i++){
 	if($i)
-		sleep(10);
+		sleep(5);
 	$mqtt->publish("erica/heartbeat",date("r"));
 }
