@@ -6,6 +6,8 @@ include('settings.php');
 ini_set('default_socket_timeout', $config['eye']['cache']*4);
 
 if(isset($_REQUEST['eye']) && isset($config['eye'][$_REQUEST['eye']])){
+
+	
 	$eye = $config['eye'][$_REQUEST['eye']];
 	
 	if(!file_exists($eye['cache']) || (time() - filemtime($eye['cache']))>$config['eye']['cache']){
@@ -44,16 +46,17 @@ if(isset($_REQUEST['fetch']) && isset($config['fetch'][$_REQUEST['fetch']])) {
 }
 
 if(isset($_REQUEST['task']) && $_REQUEST['task'] == $_REQUEST['task']){
-	
+
 	$entityBody = file_get_contents('php://input');
+	echo $entityBody;
 	$options = array(
 	        'http' => array(
 	        'method'  => 'POST',
 	        'content' => $entityBody,
-			'protocol_version' => 1.1
+			'protocol_version' => 1.0
 	    )
 	);
-		$context  = stream_context_create($options);
+	$context  = stream_context_create($options);
 	$result = file_get_contents($config['brain']['events']['url'], false, $context);
 	header('Content-Type: application/json');
 	echo $result;

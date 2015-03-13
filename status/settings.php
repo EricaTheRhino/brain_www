@@ -5,7 +5,7 @@ $config['eye']['right'] = array("url"=>"http://right-eye.etr:8182/image/current"
 $config['eye']['cache'] = 1;
 
 
-$config['brain']['events'] = array("url"=>"http://brain.etr/events/");
+$config['brain']['events'] = array("url"=>"http://brain.ericatherhino.org/events/");
 
 
 $config['fetch']['mood'] = array("url"=>"http://brain.etr/mood.json","cache"=>"/mnt/ramdisk/erica/fetch/mood.json");

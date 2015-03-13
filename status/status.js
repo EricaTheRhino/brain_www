@@ -68,14 +68,17 @@
 		return Page;
 	})();
 	$(function(){
+		return connect_mqtt();
+	});
+	
+	function connect_mqtt(){
 		console.log('Run');
 		Main.controller = new Main.Page;
 		Main.controller.connect();
 		Main.controller.subscribe('erica/#');
 
 		return Main.controller;
-
-	});
+	}
 
 	function erica_heartbeat(state){
 	   $(".heart").css("opacity", "1");

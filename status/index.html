@@ -28,7 +28,7 @@
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container">
         <div class="navbar-header">
-          <a class="navbar-brand" href="#">ERICA the Rhino - Live Status</a>
+          <a class="navbar-brand" href="">ERICA the Rhino - Live Status</a>
         </div>
 	  </div>
     </div>
@@ -39,9 +39,10 @@
             <div class="col-md-4">
                 <h1><span class="glyphicon glyphicon-cog"></span>&nbsp;Controls</h1>
                 <div id="control-panel">
-                    <button class="btn btn-success btn-lg btn-block eventer" data-event="brain.test.eyes">Move My Eyes</button>
-                    <button class="btn btn-success btn-lg btn-block eventer" data-event="brain.test.sound">Hear Me Roar</button>
-                    <button class="btn btn-success btn-lg btn-block eventer" data-event="brain.test.ears">Wiggle My Ears</button>
+                    <button class="btn btn-success btn-lg btn-block eventer" data-event="interaction.touchscreen.eyes">Move My Eyes</button>
+                    <!--button class="btn btn-success btn-lg btn-block eventer" data-event="brain.test.sound">Hear Me Roar</button-->
+					<button class="btn btn-success btn-lg btn-block eventer" data-event="interaction.touchscreen.ears">Wiggle My Ears</button>
+			        <button class="btn btn-success btn-lg btn-block eventer smer" data-event="interaction.touchscreen.hornlights">Change My Horn Colour</button>
                     <button class="btn btn-success btn-lg btn-block eventer" data-event="interaction.chin.press">Feed Me</button>
                 </div>
             </div>
@@ -95,7 +96,7 @@
     			    <span class="sr-only">60% Complete</span>
     			  </div>
     			</div>
-    			<h4>Light Colour&nbsp;<span class="glyphicon glyphicon-record" id="light_color"></span><img src="xmas.gif" id="light_xmas" style="display:none;vertical-align:bottom;"></h4>
+    			<h4 style="display:none;">Light Colour&nbsp;<span class="glyphicon glyphicon-record" id="light_color"></span><img src="xmas.gif" id="light_xmas" style="display:none;vertical-align:bottom;"></h4>
 			</div>
 			
     	</div>
@@ -116,8 +117,19 @@
 <script language="javascript">
 jQuery(function($) {
     $(".eventer").click(function() {
+		$(this).addClass("disabled");
         var ev = $(this).data("event");
-        $.post(config_actions.url, JSON.stringify({'event':ev, 'params':{}}));
+     
+		$.ajax({
+		  element: this,
+		  type: 'POST',
+		  url: config_actions.url,
+			 context: this,
+		  data: JSON.stringify({'event':ev, 'params':{}}),
+		}).always(function() {
+			console.log(this);
+			$(this).removeClass("disabled");
+		});
     });
 
     var reloadLeftEye = function() {
