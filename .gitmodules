@@ -1,0 +1,3 @@
+[submodule "status/test/phpMQTT"]
+	path = status/test/phpMQTT
+	url = https://github.com/bluerhinos/phpMQTT.git
