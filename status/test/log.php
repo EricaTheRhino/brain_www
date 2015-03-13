@@ -7,7 +7,7 @@ require("phpMQTT/phpMQTT.php");
 
 	
 $mqtt = new phpMQTT("brain.etr", 1883, "EricaWWWLog");
-if (!$mqtt->connect()) {
+if (!$mqtt->connect_auto()) {
 	die();
 }
 
