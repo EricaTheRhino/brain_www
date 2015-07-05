@@ -138,6 +138,39 @@ function updateMonologueAjax(){
         });	
 }
 
+function updateVolumeAjax(){
+	$.ajax({
+                url:config_fetch.volume,
+                success:function(volume){
+                        $("#volume").text(volume+"%");
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                }
+        });
+}
+
+function updateVolumeDownAjax(){
+        $.ajax({
+                url:config_fetch.volume_down,
+                success:function(volume){
+                        $("#volume").text(volume+"%");
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                }
+        });
+}
+
+function updateVolumeUpAjax(){
+        $.ajax({
+                url:config_fetch.volume_up,
+                success:function(volume){
+                        $("#volume").text(volume+"%");
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                }
+        });
+}
+
 function updateMoodBars(moods){
 	index_map = { e: 'energy', m: 'mood', i: 'interest', f: 'fullness' };
         $.each(moods, function(index, value) {

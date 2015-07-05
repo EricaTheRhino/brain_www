@@ -96,6 +96,7 @@ h2,h3{
 	left: 30px;
 	top: 150px;
 }
+
 #btns1{
         position:absolute;
         left: 30px;
@@ -107,8 +108,13 @@ h2,h3{
         left: 405px;
         top: 220px;
 }
+#btns3{
+	position:absolute;
+        right: 0;
+	bottom: 0;
+}
 
-#btns a, #btns1 a, #btns2 a{
+#btns a, #btns1 a, #btns2 a, $btns3 a{
 	display:block;
 	margin-bottom: 10px;
 }
@@ -139,6 +145,43 @@ h2,h3{
 	color: #428bca;
 	margin-bottom: 10px;
 }
+
+.btn-small {
+        zoom:1.8;
+        border: 2px solid #ccc;
+        background-image: linear-gradient(to bottom, #ffffff, #e6e6e6);
+        width: 50px;
+        display: block;
+	float: left;
+        color: #428bca;
+	text-align: center;
+	border-radius: 4px;
+	font-size: 14pt;
+        font-weight: bold;
+	cursor: pointer;
+}
+
+.btn-hidden {
+	zoom:1.8;
+        border: 2px;
+        background: none;
+        width: 80px;
+	height: 80px;
+        display: block;
+        color: #428bca;
+}
+
+.ctl-value {
+	zoom:1.8;
+	float: left;
+	background-color: #e6e6e6;
+	padding: 0 10px;
+	margin: 0 5px;
+	border-radius: 4px;
+	font-size: 16pt;
+	font-weight: bold;	
+}
+	
 button {
 	background: #ffffff;
 	background-color: #ffffff;

@@ -32,12 +32,14 @@
 			 <a href="#" class="btn btn-large" onclick="change_page('contact')">Find Me on the Web</a>
 		 </div>
                  <div id="btns2">
-                        <a href="#" class="btn btn-large" onclick="change_page('interact')">Interact with Me</a>
-                  	<a href="#" class="btn btn-large" onclick="change_page('see')">See What I See</a>
+                         <a href="#" class="btn btn-large" onclick="change_page('interact')">Interact with Me</a>
+                         <a href="#" class="btn btn-large" onclick="change_page('see')">See What I See</a>
                          <a href="#" class="btn btn-large" onclick="change_page('mood')">My Mood</a>
                          <a href="#" class="btn btn-large" onclick="change_page('log')">My Internal Monologue</a>
-
 		 </div>
+                 <div id="btns3">
+                         <a href="#" class="btn-hidden btn-large" onclick="change_page('admin')"></a>
+                 </div>
 
 
 	  </div>
@@ -212,13 +214,19 @@
         </div>
 
   
-	 <div class="container" id="admin">
-		 <div id="btns">
-			  <a href="http://awareness-screen.ecs.soton.ac.uk/apps/screenres/" class="btn btn-large" onclick="getScreenRes(); return false;" id="screenres">Screen Res</a>
-
-		 </div>
-
-<!--   		 <img src ="imgs/home.png" alt="Home" class="home_icon" onclick="change_page('home')"/> -->
+	<div class="container" id="admin">
+          <img src ="imgs/rhino_sm.png" alt="Erica" class="rhino_sm"/>
+          <img src="imgs/back.gif" alt="Erica" class="back_logo"  onclick="change_page('home');"/>
+          <img src="imgs/erica_noback.png" alt="Erica" class="rhino_logo_moved"  onclick="change_page('home');"/>
+          <div id="btns">
+            <h2>Controls</h2>
+            <div id="state-volume" style="width: 930px; margin-top: 30px;">
+              <h3 style="float: left;">Volume:&nbsp;&nbsp;</h3>
+              <span class="btn-small" onclick="updateVolumeDownAjax();">-</span>
+              <span id="volume" class="ctl-value">??%</span>
+              <span class="btn-small" onclick="updateVolumeUpAjax();">+</span>
+            </div>
+          </div>
 	</div>
 
 
@@ -259,12 +267,13 @@ $('#debug_box').html($('#debug_box').html()+"<br/>READY");
     });
 
 
- var d = new Date();
- $("#left-image").attr("src", config_eyes.left+d.getTime());
- $("#right-image").attr("src", config_eyes.right+d.getTime());
+   var d = new Date();
+   $("#left-image").attr("src", config_eyes.left+d.getTime());
+   $("#right-image").attr("src", config_eyes.right+d.getTime());
 
     updateMoodBarsAjax();
-    updateMonologueAjax();    
+    updateMonologueAjax();
+    updateVolumeAjax();
      
     setLastPressTime(); 
     setInterval(backToHome, 5000);
