@@ -149,6 +149,19 @@ function updateVolumeAjax(){
         });
 }
 
+function updatePowerOffCodeAjax(num){
+        $.ajax({
+                url:config_fetch.power_off_code+num,
+                success:function(returned){
+			if (returned == "PASS") $("#poweroff").show();
+			else $("#poweroff").hide();
+			$("#poweroff_code").text(returned);
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                }
+        });
+}
+
 function updateVolumeDownAjax(){
         $.ajax({
                 url:config_fetch.volume_down,

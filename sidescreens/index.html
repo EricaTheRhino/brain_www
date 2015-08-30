@@ -221,10 +221,27 @@
           <div id="btns">
             <h2>Controls</h2>
             <div id="state-volume" style="width: 930px; margin-top: 30px;">
-              <h3 style="float: left;">Volume:&nbsp;&nbsp;</h3>
+              <h2 style="float: left;">Volume:&nbsp;&nbsp;</h3>
               <span class="btn-small" onclick="updateVolumeDownAjax();">-</span>
               <span id="volume" class="ctl-value">??%</span>
               <span class="btn-small" onclick="updateVolumeUpAjax();">+</span>
+            </div>
+            <br/><br/><br/>
+            <div style="width: 930px; margin-top: 30px;">
+	      <h2 style="float: left;">Power Off Code:</h3> 
+              <span id="poweroff_code" class="ctl-value">XXXX</span>
+              <span class="btn-small" onclick="updatePowerOffCodeAjax('Off');" id="poweroff" style="display: none; width: 100px;">Off</span>
+              <br/><br/><br/>
+              <span class="btn-small" onclick="updatePowerOffCodeAjax(0);">0</span>
+              <span class="btn-small" onclick="updatePowerOffCodeAjax(1);">1</span>
+              <span class="btn-small" onclick="updatePowerOffCodeAjax(2);">2</span>
+              <span class="btn-small" onclick="updatePowerOffCodeAjax(3);">3</span>
+              <span class="btn-small" onclick="updatePowerOffCodeAjax(4);">4</span>
+              <span class="btn-small" onclick="updatePowerOffCodeAjax(5);">5</span>
+              <span class="btn-small" onclick="updatePowerOffCodeAjax(6);">6</span>
+              <span class="btn-small" onclick="updatePowerOffCodeAjax(7);">7</span>
+              <span class="btn-small" onclick="updatePowerOffCodeAjax(8);">8</span>
+              <span class="btn-small" onclick="updatePowerOffCodeAjax(9);">9</span>
             </div>
           </div>
 	</div>
